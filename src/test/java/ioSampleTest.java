@@ -16,14 +16,6 @@ public class ioSampleTest {
     public AndroidDriver<MobileElement> driver;
     public WebDriverWait                wait;
 
-    //com.facebook.katana.activity.FbMainTabActivity
-    //Elements By
-    //By jobsBy           = By.id("com.isinolsun.app:id/rootRelativeView");
-    //By allowWhenUsingBy = By.id("com.android.permissioncontroller:id/permission_allow_foreground_only_button");
-    //By searchingJobBy   = By.id("com.isinolsun.app:id/bluecollar_type_button");
-    //By animationBy      = By.id("com.isinolsun.app:id/animation_view");
-    //By toolBarTitleBy   = By.id("com.isinolsun.app:id/toolbarTitle");
-
     By loginButton = By.xpath("//android.view.ViewGroup[@content-desc=\"Log In\"]");
     By passwordField = By.xpath("//android.widget.EditText[@content-desc=\"Password\"]");
     By emailField = By.xpath("//android.widget.EditText[@content-desc=\"Username\"]");
@@ -46,28 +38,13 @@ public class ioSampleTest {
     @Test
     public void basicTest() throws InterruptedException {
 
-
-        //enter email & pass => login success
         wait.until(ExpectedConditions.visibilityOfElementLocated(emailField)).sendKeys("diagru251@gmail.com");
         //wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField)).click();;
         wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField)).sendKeys("vutuanson");
         wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton)).click();
 
         System.out.println("login success");
-        //Click I am searching a job
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(searchingJobBy)).click();
 
-        //Notification Allow
-        //if (wait.until(ExpectedConditions.visibilityOfElementLocated(allowWhenUsingBy)).isDisplayed()) {
-        //    wait.until(ExpectedConditions.visibilityOfElementLocated(allowWhenUsingBy)).click();
-        //}
-
-        //Click Second Job
-        //wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(jobsBy)).get(1).click();
-
-        //Do a simple assertion
-        //String toolBarTitleStr = wait.until(ExpectedConditions.visibilityOfElementLocated(toolBarTitleBy)).getText();
-        //Assert.assertTrue(toolBarTitleStr.toLowerCase().contains("detay"));
     }
 
     @AfterMethod
